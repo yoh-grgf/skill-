@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI UI Forge · 样板页</title>
+<style>
+  /* ---------- 令牌：唯一真源（由 scripts/tokens.py --preset neutral-pro 生成） ---------- */
+  :root {
+    --bg:#F7F8FA; --surface:#FFFFFF; --surface-alt:#F1F3F7; --border:#E3E6ED;
+    --text:#111420; --muted:#5B6274; --primary:#3B6FE0; --success:#1F9D63; --danger:#D24545;
+    --r-sm:8px; --r-md:12px; --r-pill:999px;
+    --s1:4px; --s2:8px; --s3:12px; --s4:16px; --s5:24px; --s6:32px; --s7:48px; --s8:64px; --s9:96px;
+    --shadow-card:0 1px 2px rgba(16,20,32,.06), 0 8px 24px -12px rgba(16,20,32,.12);
+    --fast:120ms; --base:200ms; --ease:cubic-bezier(.2,.7,.3,1);
+    --font:Inter,"PingFang SC","Microsoft YaHei","Source Han Sans SC",system-ui,sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg:#0B0D12; --surface:#141821; --surface-alt:#1B202B; --border:#262C38;
+      --text:#F2F4F8; --muted:#9AA3B5; --primary:#6E9BFF; --success:#3DD68C; --danger:#F0736B;
+      --shadow-card:0 0 0 1px rgba(255,255,255,.05), 0 12px 32px -18px rgba(0,0,0,.8);
+    }
+  }
+  * { box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body {
+    margin:0; background:var(--bg); color:var(--text); font-family:var(--font);
+    font-size:16px; line-height:1.65; -webkit-font-smoothing:antialiased;
+  }
+  .wrap { max-width:1120px; margin:0 auto; padding:0 var(--s5); }
+  a { color:inherit; }
+
+  /* ---------- 导航 ---------- */
+  header {
+    position:sticky; top:0; z-index:10; backdrop-filter:blur(12px);
+    background:color-mix(in oklab, var(--bg) 82%, transparent);
+    border-bottom:1px solid var(--border);
+  }
+  .nav { display:flex; align-items:center; justify-content:space-between; height:64px; }
+  .brand { display:flex; align-items:center; gap:var(--s2); font-weight:650; letter-spacing:-.01em; }
+  .dot { width:10px; height:10px; border-radius:var(--r-pill); background:var(--primary); }
+  .nav nav { display:flex; gap:var(--s5); font-size:14px; color:var(--muted); }
+  .nav nav a { text-decoration:none; padding:var(--s2) 0; transition:color var(--fast) var(--ease); }
+  .nav nav a:hover { color:var(--text); }
+  .btn {
+    display:inline-flex; align-items:center; justify-content:center; gap:var(--s2);
+    height:40px; padding:0 var(--s4); border-radius:var(--r-sm); border:1px solid transparent;
+    font-size:14px; font-weight:600; cursor:pointer; text-decoration:none;
+    transition:background var(--fast) var(--ease), color var(--fast) var(--ease), border-color var(--fast) var(--ease), transform var(--fast) var(--ease);
+  }
+  .btn-primary { background:var(--primary); color:#fff; }
+  .btn-primary:hover { filter:brightness(1.06); transform:translateY(-1px); }
+  .btn-primary:active { transform:translateY(0); }
+  .btn-ghost { background:transparent; color:var(--text); border-color:var(--border); }
+  .btn-ghost:hover { background:var(--surface-alt); }
+  .btn:focus-visible, a:focus-visible, summary:focus-visible {
+    outline:2px solid var(--primary); outline-offset:2px;
+  }
+
+  /* ---------- hero ---------- */
+  .hero { padding:var(--s9) 0 var(--s8); }
+  .eyebrow {
+    display:inline-flex; align-items:center; gap:var(--s2);
+    font-size:13px; letter-spacing:.06em; text-transform:uppercase;
+    color:var(--muted); background:var(--surface); border:1px solid var(--border);
+    padding:6px 12px; border-radius:var(--r-pill);
+  }
+  h1 {
+    font-size:clamp(34px, 5vw, 56px); line-height:1.1; letter-spacing:-.02em;
+    font-weight:650; margin:var(--s5) 0 var(--s4); max-width:18ch;
+  }
+  h1 em { font-style:normal; color:var(--primary); }
+  .lede { font-size:18px; color:var(--muted); max-width:52ch; margin:0 0 var(--s6); }
+  .cta { display:flex; gap:var(--s3); flex-wrap:wrap; }
+  .stats { display:flex; gap:var(--s7); margin-top:var(--s7); flex-wrap:wrap; }
+  .stat b { display:block; font-size:28px; letter-spacing:-.01em; }
+  .stat span { font-size:13px; color:var(--muted); }
+
+  /* ---------- 卡片区 ---------- */
+  section { padding:var(--s8) 0; }
+  .sec-head { margin-bottom:var(--s6); }
+  .sec-head h2 { font-size:28px; line-height:1.3; letter-spacing:-.01em; margin:0 0 var(--s2); font-weight:600; }
+  .sec-head p { margin:0; color:var(--muted); }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:var(--s4); }
+  .card {
+    background:var(--surface); border:1px solid var(--border); border-radius:var(--r-md);
+    padding:var(--s5); box-shadow:var(--shadow-card);
+    transition:transform var(--base) var(--ease), border-color var(--base) var(--ease);
+  }
+  .card:hover { transform:translateY(-2px); border-color:color-mix(in oklab, var(--primary) 40%, var(--border)); }
+  .card h3 { margin:var(--s3) 0 var(--s2); font-size:17px; font-weight:600; }
+  .card p { margin:0; color:var(--muted); font-size:14px; line-height:1.7; }
+  .chip {
+    display:inline-block; font-size:12px; font-weight:500; color:var(--primary);
+    background:color-mix(in oklab, var(--primary) 10%, transparent);
+    padding:2px 10px; border-radius:var(--r-pill);
+  }
+
+  /* ---------- 对照表 ---------- */
+  table { width:100%; border-collapse:collapse; font-size:14px; }
+  th, td { text-align:left; padding:var(--s3) var(--s4); border-bottom:1px solid var(--border); }
+  th { color:var(--muted); font-weight:500; font-size:13px; }
+  td:last-child, th:last-child { text-align:center; white-space:nowrap; }
+  .yes { color:var(--success); font-weight:600; }
+  .no { color:var(--danger); font-weight:600; }
+  tbody tr { transition:background var(--fast) var(--ease); }
+  tbody tr:hover { background:var(--surface-alt); }
+
+  /* ---------- 页脚 ---------- */
+  footer { border-top:1px solid var(--border); padding:var(--s6) 0 var(--s8); color:var(--muted); font-size:13px; }
+  .foot { display:flex; justify-content:space-between; gap:var(--s4); flex-wrap:wrap; }
+
+  .sr-only {
+    position:absolute; width:1px; height:1px; padding:0; margin:-1px;
+    overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; border:0;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior:auto; }
+    *, *::before, *::after { transition-duration:1ms !important; animation-duration:1ms !important; }
+    .card:hover, .btn-primary:hover { transform:none; }
+  }
+  @media (max-width:640px) {
+    .nav nav { display:none; }
+    .stats { gap:var(--s5); }
+    .hero { padding:var(--s7) 0 var(--s6); }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <div class="brand"><span class="dot"></span>AI UI Forge</div>
+    <nav aria-label="主导航">
+      <a href="#why">为什么丑</a>
+      <a href="#how">怎么做</a>
+      <a href="#check">自检</a>
+    </nav>
+    <a class="btn btn-primary" href="#how">看工作流</a>
+  </div>
+</header>
+
+<main>
+  <section class="hero wrap">
+    <span class="eyebrow">Design tokens first</span>
+    <h1>先定令牌，<em>再让 AI 画</em>。</h1>
+    <p class="lede">
+      AI 做出来的页面一眼假，通常不是模型不行，而是它既不知道你的设计系统，
+      也没人验收。这份样板页的每一个颜色、间距、圆角都来自同一份
+      <code>design-tokens.json</code>——换肤只改那一个文件。
+    </p>
+    <div class="cta">
+      <a class="btn btn-primary" href="#how">开始三步走</a>
+      <a class="btn btn-ghost" href="#check">交付自检清单</a>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>8pt</b><span>间距刻度，别无其他</span></div>
+      <div class="stat"><b>≤3</b><span>圆角档位</span></div>
+      <div class="stat"><b>1</b><span>全站唯一强调色</span></div>
+      <div class="stat"><b>4.5:1</b><span>正文对比度下限</span></div>
+    </div>
+  </section>
+
+  <section id="why" class="wrap">
+    <div class="sec-head">
+      <h2>页面「能用但丑」的三个缺口</h2>
+      <p>缺口不在提示词长短，而在这三处没有落点。</p>
+    </div>
+    <div class="grid">
+      <article class="card">
+        <span class="chip">上下文</span>
+        <h3>它不知道你的品牌</h3>
+        <p>没有栅格、字体、色板，只能套模型自己的默认审美——于是所有 AI 站长得像同一个模板。</p>
+      </article>
+      <article class="card">
+        <span class="chip">结构</span>
+        <h3>整页丢给它，只能瞎猜</h3>
+        <p>一次给一屏一板块，层级、语义标签、标题层级才稳。结构错了，样式救不回来。</p>
+      </article>
+      <article class="card">
+        <span class="chip">验收</span>
+        <h3>没人检查就上线</h3>
+        <p>对比度、暗色、焦点态、断点溢出，全靠事后肉眼发现，于是永远补不完。</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="how" class="wrap">
+    <div class="sec-head">
+      <h2>三步工作流</h2>
+      <p>令牌 → 结构 → 自检，每一步都有可交付物。</p>
+    </div>
+    <div class="grid">
+      <article class="card">
+        <span class="chip">01</span>
+        <h3>生成 design-tokens.json</h3>
+        <p>语义色命名、亮暗两套、8pt 间距、词法化组件状态。后续所有页面只消费令牌。</p>
+      </article>
+      <article class="card">
+        <span class="chip">02</span>
+        <h3>一屏一板块交付</h3>
+        <p>先出结构（HTML 骨架 / JSON 节点树），确认层级无误，再写样式。块与块共享令牌。</p>
+      </article>
+      <article class="card">
+        <span class="chip">03</span>
+        <h3>跑清单再交付</h3>
+        <p>视觉、交互、无障碍、工程四组检查，逐条写结论。不通过就不许说完成。</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="check" class="wrap">
+    <div class="sec-head">
+      <h2>令牌管住什么</h2>
+      <p>下面每一项都对应清单里的一条硬指标。</p>
+    </div>
+    <table>
+      <caption class="sr-only">设计令牌覆盖范围</caption>
+      <thead>
+        <tr><th scope="col">维度</th><th scope="col">令牌里怎么定</th><th scope="col">验收</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>颜色</td><td>语义名 + 亮暗两套值</td><td class="yes">必须</td></tr>
+        <tr><td>字体</td><td>中文字体逐级回退 + 6 级字号</td><td class="yes">必须</td></tr>
+        <tr><td>间距</td><td>只允许 8pt 刻度</td><td class="yes">必须</td></tr>
+        <tr><td>圆角 / 阴影</td><td>≤3 档 / ≤2 档</td><td class="yes">必须</td></tr>
+        <tr><td>动效</td><td>120 / 200 / 320ms + 一条曲线</td><td class="yes">必须</td></tr>
+        <tr><td>花哨插画</td><td>不放进令牌，按需切图</td><td class="no">禁止硬编码</td></tr>
+      </tbody>
+    </table>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span>样板页 · 由 ai-ui-forge 令牌渲染，无外链资源</span>
+    <span>单文件可运行 · 支持暗色 · 键盘可达</span>
+  </div>
+</footer>
+
+</body>
+</html>

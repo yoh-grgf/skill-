@@ -1,0 +1,20 @@
+# python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# 生成物：令牌与样例可以提交，临时产物不提交
+*.tmp
+.pydeps/
+.tmp/
+frames/
+audio/
+*.mp4
+!video/final.mp4
+
+# 编辑器
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

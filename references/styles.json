@@ -1,0 +1,280 @@
+{
+  "$schema": "internal://ai-ui-forge/styles-1",
+  "version": 1,
+  "note": "8 套预设。palette 里的值是起点，不是圣旨：换品牌色时只替换 primary/accent，其余保持不变即可保住整体观感。",
+  "presets": [
+    {
+      "id": "neutral-pro",
+      "name": "中性专业（SaaS 默认）",
+      "fit": "B 端产品、官网、文档站、Dashboard 外壳",
+      "light": {
+        "bg": "#F7F8FA", "surface": "#FFFFFF", "surfaceAlt": "#F1F3F7",
+        "border": "#E3E6ED", "text": "#111420", "muted": "#5B6274",
+        "primary": "#3B6FE0", "accent": "#3B6FE0",
+        "success": "#1F9D63", "warning": "#C77B12", "danger": "#D24545"
+      },
+      "dark": {
+        "bg": "#0B0D12", "surface": "#141821", "surfaceAlt": "#1B202B",
+        "border": "#262C38", "text": "#F2F4F8", "muted": "#9AA3B5",
+        "primary": "#6E9BFF", "accent": "#6E9BFF",
+        "success": "#3DD68C", "warning": "#E0A03A", "danger": "#F0736B"
+      },
+      "typography": {
+        "latin": "Inter, ui-sans-serif, system-ui",
+        "cn": "\"PingFang SC\", \"Microsoft YaHei\", \"Source Han Sans SC\", sans-serif",
+        "display": { "size": 56, "lineHeight": 1.1, "weight": 650, "tracking": "-0.02em" },
+        "h1": { "size": 40, "lineHeight": 1.2, "weight": 650, "tracking": "-0.015em" },
+        "h2": { "size": 28, "lineHeight": 1.3, "weight": 600, "tracking": "-0.01em" },
+        "body": { "size": 16, "lineHeight": 1.65, "weight": 400, "tracking": "0" },
+        "caption": { "size": 13, "lineHeight": 1.5, "weight": 450, "tracking": "0.01em" }
+      },
+      "radius": { "sm": 8, "md": 12, "pill": 999 },
+      "shadow": {
+        "card": "0 1px 2px rgba(16,20,32,.06), 0 8px 24px -12px rgba(16,20,32,.12)",
+        "overlay": "0 12px 40px -12px rgba(16,20,32,.28)"
+      },
+      "density": "comfortable",
+      "motion": { "fast": 120, "base": 200, "slow": 320, "easing": "cubic-bezier(.2,.7,.3,1)" },
+      "avoid": ["紫粉渐变", "发光边框", "大于 16px 的圆角（除 pill）"]
+    },
+    {
+      "id": "editorial-warm",
+      "name": "编辑暖调（杂志感）",
+      "fit": "品牌故事、博客、作品集、内容型落地页",
+      "light": {
+        "bg": "#FBF8F2", "surface": "#FFFFFF", "surfaceAlt": "#F4EEE3",
+        "border": "#E4DACA", "text": "#1C1A17", "muted": "#6B6154",
+        "primary": "#9C3B2E", "accent": "#9C3B2E",
+        "success": "#4C7A4A", "warning": "#B07A21", "danger": "#B23A32"
+      },
+      "dark": {
+        "bg": "#151311", "surface": "#1E1B17", "surfaceAlt": "#26221D",
+        "border": "#332D25", "text": "#F3EDE3", "muted": "#A99C89",
+        "primary": "#E0796A", "accent": "#E0796A",
+        "success": "#7FB37C", "warning": "#D2A253", "danger": "#E0796A"
+      },
+      "typography": {
+        "latin": "\"Source Serif 4\", Georgia, serif",
+        "cn": "\"Songti SC\", \"Source Han Serif SC\", \"SimSun\", serif",
+        "display": { "size": 60, "lineHeight": 1.12, "weight": 600, "tracking": "-0.01em" },
+        "h1": { "size": 42, "lineHeight": 1.22, "weight": 600, "tracking": "-0.005em" },
+        "h2": { "size": 28, "lineHeight": 1.35, "weight": 550, "tracking": "0" },
+        "body": { "size": 17, "lineHeight": 1.75, "weight": 400, "tracking": "0" },
+        "caption": { "size": 13, "lineHeight": 1.6, "weight": 400, "tracking": "0.02em" }
+      },
+      "radius": { "sm": 4, "md": 6, "pill": 999 },
+      "shadow": {
+        "card": "0 1px 0 rgba(28,26,23,.06)",
+        "overlay": "0 18px 48px -20px rgba(28,26,23,.3)"
+      },
+      "density": "airy",
+      "motion": { "fast": 140, "base": 240, "slow": 380, "easing": "cubic-bezier(.16,.84,.44,1)" },
+      "avoid": ["大圆角", "高饱和撞色", "无衬线正文（中文会被压掉气质）"]
+    },
+    {
+      "id": "dark-console",
+      "name": "深色工作台",
+      "fit": "开发者工具、监控面板、AI 控制台",
+      "light": {
+        "bg": "#F4F6F9", "surface": "#FFFFFF", "surfaceAlt": "#EDF1F6",
+        "border": "#DCE2EB", "text": "#0E1420", "muted": "#586172",
+        "primary": "#2F81F7", "accent": "#2F81F7",
+        "success": "#2DA44E", "warning": "#BF8700", "danger": "#CF3B3B"
+      },
+      "dark": {
+        "bg": "#0D1117", "surface": "#161B22", "surfaceAlt": "#1C2230",
+        "border": "#2A313C", "text": "#E6EDF3", "muted": "#8B949E",
+        "primary": "#4C9AFF", "accent": "#4C9AFF",
+        "success": "#3FB950", "warning": "#D29922", "danger": "#F85149"
+      },
+      "typography": {
+        "latin": "Inter, ui-sans-serif, system-ui",
+        "cn": "\"PingFang SC\", \"Microsoft YaHei\", \"Source Han Sans SC\", sans-serif",
+        "display": { "size": 48, "lineHeight": 1.1, "weight": 700, "tracking": "-0.02em" },
+        "h1": { "size": 34, "lineHeight": 1.2, "weight": 650, "tracking": "-0.015em" },
+        "h2": { "size": 24, "lineHeight": 1.3, "weight": 600, "tracking": "0" },
+        "body": { "size": 15, "lineHeight": 1.6, "weight": 400, "tracking": "0" },
+        "caption": { "size": 12, "lineHeight": 1.5, "weight": 500, "tracking": "0.03em" },
+        "mono": "\"JetBrains Mono\", ui-monospace, SFMono-Regular, Menlo, monospace"
+      },
+      "radius": { "sm": 6, "md": 10, "pill": 999 },
+      "shadow": {
+        "card": "0 0 0 1px rgba(255,255,255,.04)",
+        "overlay": "0 18px 48px -18px rgba(0,0,0,.7)"
+      },
+      "density": "compact",
+      "motion": { "fast": 100, "base": 180, "slow": 280, "easing": "cubic-bezier(.4,0,.2,1)" },
+      "avoid": ["暗色里用纯黑底", "大面积渐变", "把强调色用于正文"]
+    },
+    {
+      "id": "calm-wellness",
+      "name": "疗愈低饱和",
+      "fit": "健康、SPA、冥想、宠物服务、生活方式品牌",
+      "light": {
+        "bg": "#F5F7F4", "surface": "#FFFFFF", "surfaceAlt": "#EAF0E9",
+        "border": "#DDE5DB", "text": "#1F2621", "muted": "#5F6B61",
+        "primary": "#3F7A5E", "accent": "#C08A5A",
+        "success": "#3F7A5E", "warning": "#B48339", "danger": "#B4553F"
+      },
+      "dark": {
+        "bg": "#101512", "surface": "#171E1A", "surfaceAlt": "#1E2620",
+        "border": "#2A342D", "text": "#EDF2EE", "muted": "#9BA79E",
+        "primary": "#6FB08C", "accent": "#D9A97C",
+        "success": "#6FB08C", "warning": "#D2A25E", "danger": "#D97B60"
+      },
+      "typography": {
+        "latin": "\"DM Sans\", ui-sans-serif, system-ui",
+        "cn": "\"PingFang SC\", \"Microsoft YaHei\", \"Source Han Sans SC\", sans-serif",
+        "display": { "size": 52, "lineHeight": 1.15, "weight": 500, "tracking": "-0.01em" },
+        "h1": { "size": 38, "lineHeight": 1.25, "weight": 550, "tracking": "-0.005em" },
+        "h2": { "size": 26, "lineHeight": 1.35, "weight": 550, "tracking": "0" },
+        "body": { "size": 16, "lineHeight": 1.8, "weight": 400, "tracking": "0.005em" },
+        "caption": { "size": 13, "lineHeight": 1.6, "weight": 450, "tracking": "0.02em" }
+      },
+      "radius": { "sm": 10, "md": 16, "pill": 999 },
+      "shadow": {
+        "card": "0 2px 8px -4px rgba(31,38,33,.12)",
+        "overlay": "0 20px 56px -24px rgba(31,38,33,.32)"
+      },
+      "density": "airy",
+      "motion": { "fast": 160, "base": 280, "slow": 420, "easing": "cubic-bezier(.22,.61,.36,1)" },
+      "avoid": ["纯白底+高饱和绿", "直角硬边", "快速弹跳动效"]
+    },
+    {
+      "id": "brutalist-bold",
+      "name": "新粗野",
+      "fit": "创意工作室、活动页、个人站、需要记忆点的产品",
+      "light": {
+        "bg": "#F2F1EC", "surface": "#FFFFFF", "surfaceAlt": "#E7E5DD",
+        "border": "#111111", "text": "#0A0A0A", "muted": "#4A4A45",
+        "primary": "#1B4DFF", "accent": "#FF4D2E",
+        "success": "#12924B", "warning": "#D98E00", "danger": "#E03131"
+      },
+      "dark": {
+        "bg": "#0A0A0A", "surface": "#141414", "surfaceAlt": "#1D1D1D",
+        "border": "#F2F1EC", "text": "#F5F4EF", "muted": "#A5A39A",
+        "primary": "#6C8CFF", "accent": "#FF7259",
+        "success": "#3DD68C", "warning": "#E8AE3C", "danger": "#FF6B6B"
+      },
+      "typography": {
+        "latin": "\"Space Grotesk\", Inter, ui-sans-serif",
+        "cn": "\"PingFang SC\", \"Microsoft YaHei\", \"Source Han Sans SC\", sans-serif",
+        "display": { "size": 72, "lineHeight": 1.02, "weight": 800, "tracking": "-0.03em" },
+        "h1": { "size": 48, "lineHeight": 1.1, "weight": 750, "tracking": "-0.02em" },
+        "h2": { "size": 30, "lineHeight": 1.2, "weight": 700, "tracking": "-0.01em" },
+        "body": { "size": 17, "lineHeight": 1.6, "weight": 450, "tracking": "0" },
+        "caption": { "size": 12, "lineHeight": 1.4, "weight": 600, "tracking": "0.06em" }
+      },
+      "radius": { "sm": 0, "md": 0, "pill": 0 },
+      "shadow": {
+        "card": "4px 4px 0 #111111",
+        "overlay": "8px 8px 0 #111111"
+      },
+      "density": "comfortable",
+      "motion": { "fast": 90, "base": 150, "slow": 240, "easing": "cubic-bezier(.6,0,.2,1)" },
+      "avoid": ["圆角", "柔和阴影", "第三种强调色", "低对比灰字"]
+    },
+    {
+      "id": "luxe-mono",
+      "name": "高级黑白",
+      "fit": "奢侈品、建筑、摄影、咨询、高单价服务",
+      "light": {
+        "bg": "#FFFFFF", "surface": "#FAFAFA", "surfaceAlt": "#F0F0EE",
+        "border": "#DCDCD8", "text": "#0D0D0D", "muted": "#6E6E6A",
+        "primary": "#0D0D0D", "accent": "#A9853F",
+        "success": "#2C6E49", "warning": "#9A7B21", "danger": "#9E2B25"
+      },
+      "dark": {
+        "bg": "#0C0C0C", "surface": "#151515", "surfaceAlt": "#1E1E1E",
+        "border": "#2E2E2E", "text": "#F4F4F2", "muted": "#9C9C98",
+        "primary": "#F4F4F2", "accent": "#C9A45E",
+        "success": "#5FA97E", "warning": "#D4B25C", "danger": "#D9736C"
+      },
+      "typography": {
+        "latin": "\"Cormorant Garamond\", \"Times New Roman\", serif",
+        "cn": "\"Songti SC\", \"Source Han Serif SC\", \"SimSun\", serif",
+        "display": { "size": 64, "lineHeight": 1.08, "weight": 400, "tracking": "0.02em" },
+        "h1": { "size": 44, "lineHeight": 1.2, "weight": 400, "tracking": "0.015em" },
+        "h2": { "size": 26, "lineHeight": 1.35, "weight": 450, "tracking": "0.02em" },
+        "body": { "size": 16, "lineHeight": 1.8, "weight": 400, "tracking": "0.01em" },
+        "caption": { "size": 12, "lineHeight": 1.6, "weight": 500, "tracking": "0.14em" }
+      },
+      "radius": { "sm": 2, "md": 2, "pill": 999 },
+      "shadow": {
+        "card": "0 1px 2px rgba(0,0,0,.05)",
+        "overlay": "0 24px 64px -28px rgba(0,0,0,.45)"
+      },
+      "density": "airy",
+      "motion": { "fast": 200, "base": 320, "slow": 520, "easing": "cubic-bezier(.25,.1,.25,1)" },
+      "avoid": ["彩色按钮", "投影卡片（改用细描边）", "粗黑体标题"]
+    },
+    {
+      "id": "playful-soft",
+      "name": "轻盈活泼",
+      "fit": "教育、亲子、宠物、消费类 App 原型",
+      "light": {
+        "bg": "#FFFDF9", "surface": "#FFFFFF", "surfaceAlt": "#FFF3E4",
+        "border": "#F0E2D0", "text": "#2A211B", "muted": "#7A6B60",
+        "primary": "#F27D42", "accent": "#2AA6A0",
+        "success": "#3EA96B", "warning": "#D98B18", "danger": "#E0574A"
+      },
+      "dark": {
+        "bg": "#171310", "surface": "#211A15", "surfaceAlt": "#2B221B",
+        "border": "#3A2E25", "text": "#FBF3EA", "muted": "#B5A495",
+        "primary": "#FF9C64", "accent": "#4FD1C9",
+        "success": "#66CC91", "warning": "#E8AE3C", "danger": "#FF8578"
+      },
+      "typography": {
+        "latin": "\"Nunito\", ui-rounded, system-ui",
+        "cn": "\"PingFang SC\", \"Microsoft YaHei\", \"Source Han Sans SC\", sans-serif",
+        "display": { "size": 54, "lineHeight": 1.14, "weight": 750, "tracking": "-0.01em" },
+        "h1": { "size": 38, "lineHeight": 1.24, "weight": 700, "tracking": "0" },
+        "h2": { "size": 26, "lineHeight": 1.35, "weight": 650, "tracking": "0" },
+        "body": { "size": 16, "lineHeight": 1.7, "weight": 450, "tracking": "0" },
+        "caption": { "size": 13, "lineHeight": 1.5, "weight": 500, "tracking": "0.01em" }
+      },
+      "radius": { "sm": 12, "md": 20, "pill": 999 },
+      "shadow": {
+        "card": "0 6px 20px -10px rgba(242,125,66,.35)",
+        "overlay": "0 20px 48px -20px rgba(42,33,27,.28)"
+      },
+      "density": "comfortable",
+      "motion": { "fast": 120, "base": 220, "slow": 340, "easing": "cubic-bezier(.34,1.56,.64,1)" },
+      "avoid": ["两个以上高饱和主色", "细硬阴影", "小字号正文（<15px）"]
+    },
+    {
+      "id": "gradient-startup",
+      "name": "创业渐变",
+      "fit": "AI 产品、工具类 SaaS、发布会落地页",
+      "light": {
+        "bg": "#F8F9FF", "surface": "#FFFFFF", "surfaceAlt": "#EEF0FF",
+        "border": "#E0E3F5", "text": "#12142A", "muted": "#5B5F7E",
+        "primary": "#5B4BF5", "accent": "#22B8CF",
+        "success": "#129E6B", "warning": "#C77B12", "danger": "#D24545"
+      },
+      "dark": {
+        "bg": "#080A18", "surface": "#11142A", "surfaceAlt": "#181C38",
+        "border": "#242A4A", "text": "#F0F2FF", "muted": "#9AA0C4",
+        "primary": "#8B7DFF", "accent": "#4FD8E8",
+        "success": "#3DD68C", "warning": "#E0A03A", "danger": "#F0736B"
+      },
+      "typography": {
+        "latin": "Inter, ui-sans-serif, system-ui",
+        "cn": "\"PingFang SC\", \"Microsoft YaHei\", \"Source Han Sans SC\", sans-serif",
+        "display": { "size": 58, "lineHeight": 1.1, "weight": 700, "tracking": "-0.025em" },
+        "h1": { "size": 40, "lineHeight": 1.2, "weight": 650, "tracking": "-0.02em" },
+        "h2": { "size": 27, "lineHeight": 1.32, "weight": 600, "tracking": "-0.01em" },
+        "body": { "size": 16, "lineHeight": 1.68, "weight": 400, "tracking": "0" },
+        "caption": { "size": 13, "lineHeight": 1.5, "weight": 500, "tracking": "0.01em" }
+      },
+      "radius": { "sm": 10, "md": 14, "pill": 999 },
+      "shadow": {
+        "card": "0 2px 4px rgba(18,20,42,.05), 0 12px 32px -16px rgba(91,75,245,.28)",
+        "overlay": "0 24px 64px -24px rgba(18,20,42,.4)"
+      },
+      "density": "comfortable",
+      "motion": { "fast": 120, "base": 200, "slow": 320, "easing": "cubic-bezier(.2,.7,.3,1)" },
+      "avoid": ["全身渐变（只许点缀在 hero 背景或按钮）", "彩色阴影满屏", "三种以上渐变方向"]
+    }
+  ]
+}
